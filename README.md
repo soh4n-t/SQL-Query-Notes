@@ -1,4 +1,4 @@
-## SQLI-Query-Notes
+z## SQLI-Query-Notes
 ### Authentication Bypass
 ```
 ● ' OR 1=1--                           : closes the current string ('), injects an always-true condition (OR 1=1), and comments out the remaining query (--)
@@ -8,7 +8,7 @@
 ```
 ● ' UNION SELECT NULL--                : used to determine the number of columns in an original sql query. Increment the number of NULL values until it shows an error, then the previous NULL count will be the column count
 ● ' ORDER BY 1--                       : used for the same purpose as the previous one(' UNION SELECT NULL--), here increment the numeric value
-● ' UNION SELECT NULL FROM             : retrieves the database server version. the query varies depending on the database management system, the NULL count should       v$version--                          be same as that found from the above
+● ' UNION SELECT NULL FROM v$version-- : retrieves the database server version. the query varies depending on the database management system, the NULL count should be same as that found from the above
 
 
 ```
