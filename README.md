@@ -6,8 +6,8 @@
 ```
 ### UNION-Based SQLI
 ```
-● ' UNION SELECT NULL-- : used to determine the number of columns in an original sql query. Increment the number of NULL values until it shows an error, then the previous NULL count will be the column number
-● ' ORDER BY 1--        : same function as the previous (' UNION SELECT NULL--), here increment the numeric value
+● ' UNION SELECT NULL-- : used to determine the number of columns in an original sql query. Increment the number of NULL values until it shows an error, then the previous NULL count will be the column count
+● ' ORDER BY 1--        : same function as the previous one(' UNION SELECT NULL--), here increment the numeric value
 ```
 
 
