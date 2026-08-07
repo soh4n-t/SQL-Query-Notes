@@ -5,7 +5,7 @@
 ● admin'--                      : uses admin as the username, closes the current string ('), and comments out the rest of the query (--)
 ```
 ### Basic String Operations
-#### String Concantenation
+#### Concantenation
 ```
 ● MySQL / Microsoft SQL Server  : 
 ● Oracle                        : 
